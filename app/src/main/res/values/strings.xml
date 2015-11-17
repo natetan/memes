@@ -4,4 +4,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="create_meme_button_text">Create Meme</string>
+    <string name="meme_top_text">Top</string>
+    <string name="meme_bottom_text">Bottom</string>
 </resources>
