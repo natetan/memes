@@ -32,6 +32,9 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 topText.setText(convert(memeLine1));
                 bottomText.setText(convert(memeLine2));
+
+                memeLine1.setText("");
+                memeLine2.setText("");
             }
         });
     }
