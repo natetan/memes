@@ -13,7 +13,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:hint="type message for line 1"
-        android:inputType="number|text"/>
+        android:maxLength="60"/>
 
     <EditText
         android:id="@+id/memeLine2"
@@ -25,8 +25,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:hint="type message for line 2"
-        android:inputType="number|text"
-        />
+        android:maxLength="60"/>
 
     <Button
         android:id="@+id/memeButton"
