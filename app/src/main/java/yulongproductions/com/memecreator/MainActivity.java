@@ -10,7 +10,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements TopSectionFragment.TopSectionListener {
+
+    /*
+        Old code when using MainActivity to communicate with the fragments.
+        Worked fine, with no error, but does not showcase the fragment way
+        of communicating with MainActivity.
+
+
     private EditText memeLine1;
     private EditText memeLine2;
     private TextView topText;
@@ -43,25 +50,19 @@ public class MainActivity extends ActionBarActivity {
         return editText.getText().toString();
     }
 
+    */
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
     }
 
+    // Gets called by TopSectionFragment when user clicks the button
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void createMeme(String top, String bottom) {
+        BottomPictureFragment bottomFragment = (BottomPictureFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.fragment2);
+        bottomFragment.setMemeText(top, bottom);
     }
 }
